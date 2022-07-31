@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load mathfilters %}
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ flying_from }}</h1>
+    <p class="mb-4">Найдено {{ numbers_of_hotels }} тура, от {{ min_price_of_hotels|intdiv:1000 }} 000 до {{ max_price_of_hotels|intdiv:1000 }} 000 и от {{ min_nights }} ночей до
+      {{max_nights}} ночей</p>
+    <!-- CARDS -->
+    <div class="row row-conformity">
+      {% for tour in hotels_departure %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{tour.picture}}" alt="" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour.title }}</h2>
+            <p class="card-text">{{ tour.description }}</p>
+            <a href="/tour/{{tour.num}}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% endfor%}
+    </div>
+  </main>
+
+{% endblock %}

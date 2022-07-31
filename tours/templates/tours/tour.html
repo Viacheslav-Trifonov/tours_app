@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load mathfilters %}
+  <main class="container">
+    <section class="mt-3 pb-5">
+      {% for tour in hotels_num %}
+      <h1 class="display-3 mt-4">{{ tour.title }} {{ tour.stars}}★</h1>
+      <!-- HERO -->
+      <p class="lead">{{ tour.country }} из {{ name_city }} {{ tour.nights }} ночей</p>
+      <img src="{{ tour.picture }}" class="w-75" alt="">
+      <p class="my-4 w-75">{{ tour.description }}</p>
+      <a href="#" class="btn btn-success btn-lg">Купить тур за {{ tour.price|intdiv:1000 }} 000 рублей</a>
+    </section>
+    {% endfor %}
+  </main>
+{% endblock %}
