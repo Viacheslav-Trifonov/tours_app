@@ -4,7 +4,7 @@
 {% load mathfilters %}
   <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим {{ flying_from }}</h1>
-    <p class="mb-4">Найдено {{ numbers_of_hotels }} тура, от {{ min_price_of_hotels|intdiv:1000 }} 000 до {{ max_price_of_hotels|intdiv:1000 }} 000 и от {{ min_nights }} ночей до
+    <p class="mb-4">Найдено {{ numbers_of_hotels }} тура, от {{ min_price_of_hotels|intdiv:1000 }} 000 до {{ max_price_of_hotels|intdiv:1000 }} 000 рублей и от {{ min_nights }} ночей до
       {{max_nights}} ночей</p>
     <!-- CARDS -->
     <div class="row row-conformity">
